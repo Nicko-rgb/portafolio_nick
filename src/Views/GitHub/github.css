@@ -1,0 +1,68 @@
+.github {
+    position: fixed;
+    right: 4vw;
+    top: 70px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    animation: scaleRebot .5s ease;
+    max-width: 400px;
+    max-height: 500px;
+    padding: 8px;
+    background-color: #33333350;
+    backdrop-filter: blur(4px);
+}
+.github .boxs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    /* Barra de scroll personalizada con gradientes */
+    /* Establece el ancho de la barra de scroll */
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    /* Estilo del track (fondo de la barra) */
+    &::-webkit-scrollbar-track {
+        background: #565656;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    /* Estilo del thumb (parte que se mueve) */
+    &::-webkit-scrollbar-thumb {
+        background: rgb(221, 221, 221);
+        border-radius: 10px;
+    }
+
+    /* Efecto hover sobre el thumb */
+    &::-webkit-scrollbar-thumb:hover {
+        background: white;
+        cursor: pointer;
+    }
+}
+
+.github h2 {
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.github aside {
+    display: flex;
+    flex-direction: column;
+    background-color: #333;
+    padding: 10px;
+}
+
+.github aside a {
+    text-align: right;
+    font-size: 14px;
+}
+
+.github aside p {
+    font-size: 13px;
+}

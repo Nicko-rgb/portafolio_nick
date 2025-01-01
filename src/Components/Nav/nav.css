@@ -1,0 +1,123 @@
+
+.nav-top {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw;
+    z-index: 10;
+    transition: 1s ease;
+}
+.nav-top .logo {
+    display: flex;
+    gap: 5px;
+    cursor: pointer;
+    transition: .3s ease;
+    animation: mLeft 1s ease;
+    filter: drop-shadow(0 0 6px white);
+}
+.nav-top .logo:hover {
+    filter: drop-shadow(0 0 6px aqua);
+}
+.nav-top .logo img {
+    width: 35px;
+    filter: brightness(120%)  contrast(110%) saturate(90%);
+}
+.nav-top .logo p{
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--color3);
+}
+.nav-top .logo p span {
+    text-transform: uppercase;
+    font-size: 17px;
+    font-weight: 650;
+    position: relative;
+}
+.nav-top .logo span::after {
+    position: absolute;
+    content: '';
+    right: -18px;
+    top: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 4px solid rgba(255, 255, 255, 0.302);
+    border-top-color: var(--color3);
+    animation: girar .5s linear infinite;
+}
+.nav-top .logo span::before{
+    position: absolute;
+    content: '';
+    width: 5px;
+    height: 5px;
+    background: white;
+    border-radius: 50%;
+    right: -10.6px;
+    top: 9.2px;
+}
+.nav-top div {
+    display: flex;
+    align-items: center;
+}
+.nav-top .right {
+    gap: 20px;
+    /* border-bottom: 1px solid white; */
+    padding: 5px ;
+    position: relative;
+    animation: mTop 1s ease;
+}
+
+.nav-top .right span {
+    font-size: 14px;
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    padding-top: 4px;
+    transition: .3s ease;
+    color: white;
+    position: relative;
+}
+.nav-top .right .ico {
+    font-size: 16px;
+}
+
+.nav-top .right span::after {
+    content: ""; /* Necesario para mostrar el pseudo-elemento */
+    position: absolute; /* Posicionamiento absoluto respecto al padre */
+    left: 0; /* Comienza desde la izquierda */
+    bottom: 0; /* Posición en la parte inferior del span */
+    width: 100%; /* Ancho completo del span */
+    height: 1px; /* Altura del borde */
+    box-shadow: 0 0 5px white;
+    background-color: white;
+    transform: scaleX(0); 
+    transition: transform 0.3s ease-in-out; /* Transición suave */
+}
+
+.nav-top .right span:hover::after {
+    transform: scaleX(1);
+}
+.nav-top .right .active {
+    position: relative;
+    color: var(--color3);
+    border-bottom:var(--color3) solid 1px;
+    font-weight: 600;
+}
+
+.nav-top .right .active:hover::after {
+    transform: scaleX(0);
+}
+
+
+.nav-black {
+    background-color: #333;
+    background: #333;
+}

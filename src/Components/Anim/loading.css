@@ -1,0 +1,75 @@
+.loading {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(70, 70, 70, 0.482);
+}
+.loading nav {
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 4vw;
+    align-items: center;
+}
+.loading nav .foto {
+    height: 40px;
+    width: 200px;
+}
+.loading nav .links{
+    height: 40px;
+    width: 400px;
+}
+.loading nav div {
+    background-color: rgba(0, 0, 0, 0.247);
+    backdrop-filter: blur(20px);
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+.loading .main {
+    margin: 0 auto;
+    margin-top: 40px;
+    max-width: 600px;
+    width: 100%;
+    height: 300px;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.247);
+    backdrop-filter: blur(20px);
+    border-radius: 7px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.loading .line {
+    position: absolute;
+    width: 100%;
+    height: 4px; /* Grosor de las líneas */
+    transform: rotate(20deg);
+    background-color: #3333337c; /* Color de las líneas */
+    animation: moveLine 2s linear infinite; /* Animación */
+}
+
+.loading .line:nth-child(1) {
+    top: 30%; /* Posición vertical de la primera línea */
+    animation-delay: 0s; /* Sin retraso */
+}
+
+.loading .line:nth-child(2) {
+    top: 50%; /* Posición vertical de la segunda línea */
+    animation-delay: 0.7s; /* Retraso para la segunda línea */
+}
+
+.loading .line:nth-child(3) {
+    top: 70%; /* Posición vertical de la tercera línea */
+    animation-delay: 1.4s; /* Retraso para la tercera línea */
+}
+
+@keyframes moveLine {
+    from {
+        transform: translateX(-100%) rotate(20deg);
+    }
+    to {
+        transform: translateX(100%) rotate(20deg); 
+    }
+}
