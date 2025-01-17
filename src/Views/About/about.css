@@ -1,5 +1,111 @@
-.about{
-    height: 700px;
-    border: red solid 1px;
+/* AboutMe.css */
+.about-me {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-me h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
     color: var(--color3);
+}
+
+.about-me-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-me-image img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border: 5px solid var(--color3);
+}
+
+.about-me-text {
+    font-size: 1.1rem;
+    color: #6c757d;
+
+}
+
+
+.about-me-text ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+.about-me-text ul li {
+    background-color: #e2f0ee;
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 5px 0;
+    color: black;
+}
+.about-me-text ul strong {
+    font-weight: 650;
+    font-size: .95rem;
+    color: #5b5b5b;
+}
+.about-me-text strong {
+    font-weight: 700;
+}
+.about-me-text h3 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.about-me-text p {
+    line-height: 1.6;
+}
+
+.about-me-text aside h4 {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    color: rgb(80, 78, 78);
+}
+.about-me-text aside h4::before {
+    content: "\2022";
+    margin-right: 7px;
+}
+.about-me-text aside p {
+    line-height: 1.4;
+    margin-bottom: 10px;
+    color: #6c757d;
+    margin-top: -10px;
+}
+
+.about-me-text aside ul {
+    list-style-type: square;
+    padding-left: 35px;
+    margin-top: 10px;
+}
+
+.about-me-text aside ul li {
+    margin-bottom: 5px;
+    color: #555;
+}
+
+@media (min-width: 768px) {
+    .about-me-content {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .about-me-text {
+        text-align: left;
+    }
+
+    .about-me-image {
+        flex: 1;
+    }
+
+    .about-me-text {
+        flex: 2;
+    }
 }

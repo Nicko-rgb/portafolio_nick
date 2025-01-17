@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
-const ParticleComponent = ({fondoImage}) => {
+const ParticleComponent = () => {
     const canvasRef = useRef(null);
     const particles = [];
 
@@ -9,7 +9,7 @@ const ParticleComponent = ({fondoImage}) => {
             particles.push({
                 x: Math.random() * window.innerWidth,
                 y: Math.random() * window.innerHeight,
-                radius: Math.random() * 2 + 1,
+                radius: Math.random() * 1.3 + .9 + .5,
                 speedX: (Math.random() - 0.5) * 1,
                 speedY: (Math.random() - 0.5) * 1,
             });
@@ -28,7 +28,7 @@ const ParticleComponent = ({fondoImage}) => {
 
                 // Dibujar línea si la distancia es menor a un umbral
                 if (distance < 100) { // Ajusta este valor según sea necesario
-                    ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance / 100})`; // Desvanecer línea según distancia
+                    ctx.strokeStyle = `rgb(225, 255, 225, ${1 - distance / 100})`; // Desvanecer línea según distancia
                     ctx.lineWidth = .3;
                     ctx.beginPath();
                     ctx.moveTo(particles[i].x, particles[i].y);
@@ -42,7 +42,7 @@ const ParticleComponent = ({fondoImage}) => {
         particles.forEach(particle => {
             ctx.beginPath();
             ctx.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(255, 255, 255)';
+            ctx.fillStyle = 'white';
             ctx.fill();
             ctx.closePath();
 
@@ -76,7 +76,6 @@ const ParticleComponent = ({fondoImage}) => {
     return (
         <canvas
             className='canvas'
-            style={{backgroundImage: fondoImage ? `url(${fondoImage})` : 'none',}}
             ref={canvasRef}
             width={window.innerWidth}
             height={window.innerHeight}

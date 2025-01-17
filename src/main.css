@@ -16,10 +16,12 @@ body {
 :root {
     --color1: #3498db;
     --color2: #2ecc71;
-    --color3: rgb(33, 255, 222);
+
+    --color3: rgb(7, 128, 83);
+    --color6: rgb(24, 154, 111);
+    
     --color4: #333;
     --color5: rgb(0, 255, 208);
-    --color6: rgb(15, 181, 126);
     --blanco: white;
 }
 

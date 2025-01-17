@@ -10,7 +10,6 @@ import GitHub from '../Views/GitHub/GitHub';
 import logo from '../assets/logo_page.png';
 import { GoHome } from "react-icons/go";
 import { GrInfo, GrGithub, GrAppsRounded, GrContactInfo } from "react-icons/gr";
-import fond from '../assets/fondo3.jpg'
 
 const Page = () => {
     const homeRef = useRef(null);
@@ -56,7 +55,14 @@ const Page = () => {
 
     // Código para evaluar si la imagen de fondo cargó
     const [isLoading, setIsLoading] = useState(true);
-    const backgroundImageUrl = 'https://images.pexels.com/photos/547125/pexels-photo-547125.jpeg'
+    // const backgroundImageUrl = 'https://images.pexels.com/photos/547125/pexels-photo-547125.jpeg'
+    // const backgroundImageUrl = 'https://images.pexels.com/photos/27489827/pexels-photo-27489827/free-photo-of-paisaje-naturaleza-cielo-noche.jpeg'
+    // const backgroundImageUrl = 'https://images.pexels.com/photos/20641723/pexels-photo-20641723/free-photo-of-paisaje-montanas-naturaleza-playa.jpeg'
+    // const backgroundImageUrl = 'https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg'
+    const backgroundImageUrl = 'https://images.pexels.com/photos/796602/pexels-photo-796602.jpeg'
+    // const backgroundImageUrl = 'https://images.pexels.com/photos/2653362/pexels-photo-2653362.jpeg'
+    // const backgroundImageUrl = ''
+    // const backgroundImageUrl = ''
 
     useEffect(() => {
         const img = new Image();
@@ -128,8 +134,8 @@ const Page = () => {
                         ref={homeRef}
                         id="home"
                         className='home'
-                        // style={{ backgroundImage: `url(${backgroundImageUrl})` }}
-                        style={{backgroundImage: `url(${fond})`}}
+                        style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+                        // style={{backgroundImage: `url(${fond})`}}
                     >
                         <Home openGit={openGit} handleOpenGit={handleOpenGit} />
                     </div>

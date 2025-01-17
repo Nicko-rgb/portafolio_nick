@@ -109,7 +109,8 @@
     position: relative;
     color: var(--color3);
     border-bottom:var(--color3) solid 1px;
-    font-weight: 600;
+    font-weight: 650;
+    /* text-shadow: 0 0 3px white; */
 }
 
 .nav-top .right .active:hover::after {

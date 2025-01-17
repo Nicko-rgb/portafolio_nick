@@ -12,6 +12,7 @@
     padding: 8px;
     background-color: #33333350;
     backdrop-filter: blur(4px);
+    z-index: 1;
 }
 .github .boxs {
     display: flex;

@@ -1,0 +1,114 @@
+.cubo {
+    /* border: red solid 1px; */
+    position: relative;
+    padding: 7px;
+    width: 30px;
+}
+
+.cubo .esqui {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border: rgb(11, 117, 82) solid;
+}
+
+.cubo .esquina1 {
+    top: 0;
+    left: 0;
+    border-bottom: none;
+    border-right: none;
+}
+
+.cubo .esquina2 {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.cubo .esquina3 {
+    bottom: 0;
+    left: 0;
+    border-top: none;
+    border-right: none;
+}
+
+.cubo .esquina4 {
+    bottom: 0;
+    right: 0;
+    border-top: none;
+    border-left: none;
+}
+
+/* Contenedor para la perspectiva 3D */
+.cubo .scene {
+    width: 15px;
+    height: 15px;
+    perspective: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* El cubo con animación */
+.cubo .cube {
+    width: 15px;
+    height: 15px;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotate-bounce 2s infinite ease-in-out;
+}
+
+/* Caras del cubo */
+.cubo .face {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border: 3px solid #333;
+    box-sizing: border-box;
+}
+
+/* Posición de las caras */
+.cubo .front {
+    transform: translateZ(7px);
+}
+
+.cubo .back {
+    transform: rotateY(180deg) translateZ(7px);
+}
+
+.cubo .left {
+    transform: rotateY(-90deg) translateZ(7px);
+}
+
+.cubo .right {
+    transform: rotateY(90deg) translateZ(7px);
+}
+
+.cubo .top {
+    transform: rotateX(90deg) translateZ(7px);
+}
+
+.cubo .bottom {
+    transform: rotateX(-90deg) translateZ(7px);
+}
+
+/* Animación de rotación con rebote */
+@keyframes rotate-bounce {
+    0% {
+        transform: rotate3d(1, 1, 0, 0deg) scale(1);
+    }
+
+    50% {
+        transform: rotate3d(1, 1, 0, 180deg) scale(1.1);
+        /* Rebote */
+    }
+
+    100% {
+        transform: rotate3d(1, 1, 0, 360deg) scale(1);
+    }
+}
+
+
+
+

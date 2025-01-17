@@ -1,4 +1,197 @@
-.project {
-    height: 102vh;
-    border: blue solid;
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Título principal */
+.projects-title {
+    font-size: 2.5rem;
+    color: var(--color3);
+    margin-bottom: 20px;
+}
+
+/* Texto de carga */
+.loading-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Contenedor de las tarjetas */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.projects-grid .info  {
+    position: absolute;
+    top: -24px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    color: rgb(90, 87, 87);
+    font-size: 12px;
+}
+.projects-grid .info svg {
+    font-size: 14px;
+}
+/* Tarjetas con efectos dinámicos */
+.project-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.172);
+    padding: 1.5rem;
+    text-align: center;
+    transform-origin: center;
+    transition: 0.3s ease;
+    opacity: 0;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.416);
+}
+
+/* Animaciones personalizadas */
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.animation-0.visible {
+    animation: fadeInUp 0.6s ease;
+}
+
+.animation-1.visible {
+    animation: fadeInLeft 0.6s ease;
+}
+
+.animation-2.visible {
+    animation: fadeInRight 0.6s ease;
+}
+
+.project-card .note-ico {
+    position: absolute;
+    left: 10px;
+    font-size: 20px;
+    top: 12px;
+}
+.project-card .github-ico {
+    position: absolute;
+    right: 10px;
+    top: 12px;
+    font-size: 20px;
+    color: #595959;
+}
+/* Nombre del proyecto */
+.project-name {
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+/* Descripción del proyecto */
+.project-description {
+    font-size: 1rem;
+    color: #6c757d;
+    margin: 0;
+}
+
+/* Contenedor de lenguajes */
+.project-languages {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    /* box-shadow: 0 0 4px 1px #3333333e; */
+    /* background-color: #33333307; */
+    border-radius: 2px;
+}
+
+/* Etiqueta de lenguaje */
+.language-tag {
+    font-size: 0.9rem;
+    font-weight: 500;
+    /* border: black solid 1px; */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.language-tag svg  {
+    font-size: 18px;
+}
+.language-tag .html {
+    color: #f15e0f;
+}
+.language-tag .css {
+    color: dodgerblue;
+}
+.language-tag .js  {
+    color: #F7DF1E;
+}
+.language-tag img {
+    width: 19px;
+
+}
+
+/* Enlace del proyecto */
+.project-link {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--color3);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    margin: auto;
+}
+
+.project-link:hover {
+    background-color: var(--color6);
 }

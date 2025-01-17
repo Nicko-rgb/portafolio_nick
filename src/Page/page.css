@@ -1,4 +1,25 @@
 .page {
     display: flex;
     flex-direction: column;
+    background-color: #f4f4f9;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer/Edge */
+    user-select: none; 
+}
+
+.page > div {
+    border-bottom: var(--color3) solid 1px;
+    padding: 50px 20px;
+}
+.page>div>section {
+    /* border: blue solid; */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.page .contact {
+    border-bottom: none;
 }
