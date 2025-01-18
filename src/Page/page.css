@@ -8,11 +8,11 @@
     user-select: none; 
 }
 
-.page > div {
+.page > div > div {
     border-bottom: var(--color3) solid 1px;
     padding: 50px 20px;
 }
-.page>div>section {
+.page>div > div>section {
     /* border: blue solid; */
     max-width: 1200px;
     margin: 0 auto;

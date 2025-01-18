@@ -239,3 +239,9 @@
         transform: rotate(360deg);
     }
 }
+
+@media (max-width: 750px) {
+    .home {
+        margin-top: 0;
+    }
+}

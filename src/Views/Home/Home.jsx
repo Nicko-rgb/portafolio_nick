@@ -56,7 +56,7 @@ const Home = () => {
                     </div>
                 </section>
                 <div className="icons">
-                    <a className="ico-in" href="#" target="_blank" rel="noopener noreferrer">
+                    <a className="ico-in" href="https://www.linkedin.com/in/nixon-mancilla-dev7" target="_blank" rel="noopener noreferrer">
                         <FaLinkedinIn />
                         <p className="etiqueta">LinkedIn</p>
                     </a>

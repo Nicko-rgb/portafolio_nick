@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import './contact.css';
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+import { LuSend } from "react-icons/lu";
 
 const Contact = () => {
     const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -37,9 +40,17 @@ const Contact = () => {
             );
     };
 
+    useEffect(() => {
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 200,
+        });
+    }, []);
+
     return (
         <section className="contact-me">
-            <div className="contact-container">
+            <div data-aos="fade-up" className="contact-container">
                 <h3>Contáctame</h3>
                 <p>¿Tienes alguna pregunta o quieres trabajar conmigo? ¡Envíame un mensaje!</p>
                 <form className="contact-form" onSubmit={handleSubmit}>
@@ -55,6 +66,7 @@ const Contact = () => {
                             required
                         />
                     </div>
+
                     <div className="form-group">
                         <label htmlFor="email">Correo Electrónico</label>
                         <input
@@ -80,7 +92,7 @@ const Contact = () => {
                         ></textarea>
                     </div>
                     <button type="submit" className="contact-btn" disabled={loading}>
-                        {loading ? 'Enviando datos...' : 'Enviar Mensaje'}
+                        {loading ? 'Enviando datos...' : 'Enviar Mensaje'} <LuSend className={`${loading ? 'volvar-ico' : ''}`} />
                     </button>
                 </form>
                 {status && <p className="status-message">{status}</p>}

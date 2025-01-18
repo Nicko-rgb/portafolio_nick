@@ -10,6 +10,8 @@ import GitHub from '../Views/GitHub/GitHub';
 import logo from '../assets/logo_page.png';
 import { GoHome } from "react-icons/go";
 import { GrInfo, GrGithub, GrAppsRounded, GrContactInfo } from "react-icons/gr";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import useScreenSize from '../Components/Utils/Resice';
 
 const Page = () => {
     const homeRef = useRef(null);
@@ -18,6 +20,8 @@ const Page = () => {
     const contactRef = useRef(null)
     const [activeSection, setActiveSection] = useState('home');
     const [openGit, setOpenGit] = useState(false)
+    const [viewMenu, setViewMenu] = useState(false)
+    const width = useScreenSize();
 
     const handleScroll = () => {
         const sections = [
@@ -86,25 +90,33 @@ const Page = () => {
     }
     const handleCloseOpenGit = () => {
         setOpenGit(false)
+        setViewMenu(false)
     }
+    useEffect(() => {
+        if (width < 750) {
+            setViewMenu(false); // Cambia viewMenu a false si el ancho es menor a 750px
+        }
+    }, [width]);
 
     return (
-        <div className='page' onClick={handleCloseOpenGit}>
+        <div className='page'>
             {isLoading ? (
                 <Loading />
             ) : (
                 <>
+                    <HiOutlineMenuAlt3 onClick={() => setViewMenu(!viewMenu)} className='menu-ico' title='menu' />
                     {/* <NavTop activeSection={activeSection} homeRef={homeRef} aboutRef={aboutRef} projectsRef={projectsRef} /> */}
-                    <nav onClick={(e) => e.stopPropagation()} className={`nav-top ${activeSection !== 'home' ? 'nav-black' : ''}`} >
+                    <nav onClick={(e) => e.stopPropagation()} className={`nav-top ${viewMenu ? 'activeView' : ''} ${activeSection !== 'home' ? 'nav-black' : ''}`} >
                         <div className="logo" onClick={handleReload}>
                             <img src={logo} alt="Logo" />
                             <p>N<span>ick</span></p>
                         </div>
                         <div className="right">
+                            <h4 className="text-menu">Menú</h4>
                             <span
                                 className={activeSection === 'home' && !openGit ? 'active' : ''}
                                 onClick={() => handleScrollTo(homeRef)}>
-                                <GoHome className='ico' />Home
+                                <GoHome className='ico ico-home' />Home
                             </span>
                             <span
                                 className={activeSection === 'about' && !openGit ? 'active' : ''}
@@ -130,35 +142,39 @@ const Page = () => {
                             </span>
                         </div>
                     </nav>
-                    <div
-                        ref={homeRef}
-                        id="home"
-                        className='home'
-                        style={{ backgroundImage: `url(${backgroundImageUrl})` }}
+                    <div onClick={handleCloseOpenGit}>
+                        <div
+                            ref={homeRef}
+                            id="home"
+                            className='home'
+                            style={{ backgroundImage: `url(${backgroundImageUrl})` }}
                         // style={{backgroundImage: `url(${fond})`}}
-                    >
-                        <Home openGit={openGit} handleOpenGit={handleOpenGit} />
-                    </div>
-                    <div
-                        ref={aboutRef}
-                        id="about"
-                        className='about'
-                    >
-                        <About />
-                    </div>
-                    <div
-                        ref={projectsRef}
-                        id="projects"
-                        className='project'
-                    >
-                        <Projects />
-                    </div>
-                    <div
-                        ref={contactRef}
-                        id="contact"
-                        className='contact'
-                    >
-                        <Contact />
+                        >
+                            <Home openGit={openGit} handleOpenGit={handleOpenGit} />
+                        </div>
+                        <div
+                            ref={aboutRef}
+                            id="about"
+                            className='about'
+                        >
+                            <About />
+                        </div>
+                        <div
+                            ref={projectsRef}
+                            id="projects"
+                            className='project'
+                        >
+                            <Projects />
+                        </div>
+                        <div
+                            ref={contactRef}
+                            id="contact"
+                            className='contact'
+                        >
+                            <Contact />
+                        </div>
+
+
                     </div>
                     {openGit &&
                         <GitHub />

@@ -1,6 +1,5 @@
 import React from 'react'
 import './anima.css'
-import { useState, useEffect } from "react";
 
 
 export const MiniCubo = () => {
